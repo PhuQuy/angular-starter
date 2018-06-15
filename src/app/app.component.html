@@ -1,0 +1,14 @@
+<navbar></navbar>
+
+<div *ngIf="loading" class="loader">
+  <div class="middle">
+    <div class="sk-spinner sk-spinner-double-bounce">
+      <div class="sk-double-bounce1"></div>
+      <div class="sk-double-bounce2"></div>
+    </div>
+  </div>
+</div>
+<div #animateChild [ngClass]="getPage(appOutlet)" [style.visibility]="!loading ? 'visible' : 'hidden'">
+  <router-outlet #appOutlet="outlet"></router-outlet>
+  <root-footer></root-footer>
+</div>
