@@ -12,12 +12,14 @@ export class LogInComponent implements OnInit {
     constructor(private seoService: SeoService) { }
 
   ngOnInit() {
-    this.seoService.generateTags({
-        title: 'ahihi',
-        description: 'ahihi',
-        slug: 'feeds',
-        keywords: 'ahihi'
-    });
+      setTimeout(() => {
+          this.seoService.generateTags({
+              title: 'ahihi',
+              description: 'ahihi',
+              slug: 'feeds',
+              keywords: 'ahihi'
+          });
+      }, 2000);
   }
 
 }
