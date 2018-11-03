@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { SeoService } from 'src/app/services/seo.service';
+import { SeoService } from '@app/services/seo.service';
 
 @Component({
   selector: 'app-log-in',
   templateUrl: './log-in.component.html',
-  styleUrls: ['./log-in.component.scss']
+  styleUrls: ['./log-in.component.scss'],
+  providers: [SeoService]
 })
 export class LogInComponent implements OnInit {
 

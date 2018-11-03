@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { SeoService } from 'src/app/services/seo.service';
+import { SeoService } from '@app/services/seo.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  providers: [SeoService]
 })
 export class HomeComponent implements OnInit {
 

@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "src",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -12,6 +12,38 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "paths": {
+        "@app/*": [
+          "app/*"
+        ],
+        "@core/*": [
+          "app/core/*"
+        ],
+        "@shared/*": [
+          "app/shared/*"
+        ],
+        "@modules/*": [
+          "app/modules/*"
+        ],
+        "@models/*": [
+          "app/core/models/*"
+        ],
+        "@components/*": [
+          "app/components/*"
+        ],
+        "@config/*": [
+          "config/*"
+        ],
+        "@libs/*": [
+          "libraries/*"
+        ],
+        "@env/*": [
+          "environments/*"
+        ],
+        "@testing/*": [
+          "testing/*"
+        ]
+      },
     "lib": [
       "es2017",
       "dom"
