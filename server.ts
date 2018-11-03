@@ -66,14 +66,13 @@ win.navigator.language = "vi";
     }));
     
     app.get('/*', (req, res) => {
-        res.sendFile(template);
-    //   res.render('index', {req, res}, (err, html) => {
-    //     if (html) {
-    //       res.send(html);
-    //     } else {
-    //       console.error(err);
-    //       res.send(err);
-    //     }
-    //   });
+      res.render('index', {req, res}, (err, html) => {
+        if (html) {
+          res.send(html);
+        } else {
+          console.error(err);
+          res.send(err);
+        }
+      });
     });
     
