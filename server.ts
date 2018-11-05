@@ -41,7 +41,7 @@ win.navigator.language = "vi";
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
     
-    // const DIST_FOLDER = join(process.cwd(), 'dist');
+    const DIST_FOLDER = join(process.cwd(), 'dist');
     
     const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('./dist/server/main');
     app.use('/assets', express.static(join(__dirname, 'browser/assets')));
@@ -64,7 +64,10 @@ win.navigator.language = "vi";
     app.get('*.*', express.static('./dist/browser', {
       maxAge: '1y'
     }));
-    
+    app.get('*', (req, res) => {
+        res.render(join(DIST_FOLDER, 'browser', 'index.html'), { req });
+      });
+
     app.get('/*', (req, res) => {
       res.render('index', {req, res}, (err, html) => {
         if (html) {
